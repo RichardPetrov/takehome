@@ -1,0 +1,78 @@
+{
+    "compilerOptions": {
+        /* Visit https://aka.ms/tsconfig.json to read more about this file */
+  
+        /* Basic Options */
+        // "incremental": true,                   /* Enable incremental compilation */
+        "target": "ES2016" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */,
+         "allowJs": true,                       /* Allow javascript files to be compiled. */
+        "checkJs": false,                       /* Report errors in .js files. */
+        "jsx": "react-native",                   /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
+       "outDir": "build", /* Redirect output structure to the directory. */
+         "resolveJsonModule": true,
+        /* Strict Type-Checking Options */
+        "strict": true /* Enable all strict type-checking options. */,
+        "noImplicitAny": false,                 /* Raise error on expressions and declarations with an implied 'any' type. */
+        /* Additional Checks */
+        "noUnusedLocals": true,                /* Report errors on unused locals. */
+        "noUnusedParameters": true,            /* Report errors on unused parameters. */
+
+        /* Module Resolution Options */
+        "moduleResolution": "node",            /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
+        "baseUrl": ".",                       /* Base directory to resolve non-absolute module names. */
+                             /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
+         "rootDirs": ["src", "storybook"],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
+        "types": ["node", "jest", "detox"],                           /* Type declaration files to be included in compilation. */
+        "esModuleInterop": true /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
+        /* Advanced Options */
+        "skipLibCheck": true /* Skip type checking of declaration files. */,
+        "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
+        "paths": {
+          "@components/*": ["app/components/*"],
+          "@screens/*": ["app/screens/*"],
+          "@navigator/*": ["app/navigators/*"],
+          "@context/*": ["app/context/*"],
+          "@theme/*": ["app/theme/*"],
+          "@i18n/*": ["languages/*"],
+          "@utils/*": ["app/utils/*"],
+          "@images/*": ["assets/images/*"],
+          "@constants/*": ["constants/*"],
+          "@fixtures/*":["fixtures/*"],
+          "@assets/*":["assets/*"],
+          "@graphql/*": ["app/graphql/*"],
+          "@hooks/*": ["hooks/*"],
+        }, 
+    },
+    "include": [
+        "assets",
+        "**/*.ts",
+        "**/*.tsx",
+        "e2e/*.ts",
+        "storybook",
+        ".eslintrc.js",
+        "index.js",
+        "babel.config.js",
+        "e2e/*.js",
+        "jest.config.js",
+        "metro.config.js",
+        "react-native.config.js"
+, "App.js"      ],
+      "exclude": [
+        "node_modules",
+        "build",
+        "dist",
+        "scripts",
+        "acceptance-tests",
+        "webpack",
+        "jest",
+        "src/setupTests.ts",
+        "app/**/*.test.ts",
+        "**/examples",
+        "**/*/*.story.tsx",
+        "storybook",
+        "**/e2e",
+        "**/index.d.ts",
+        "i18n/i18n.ts"
+      ]
+  }
+  
