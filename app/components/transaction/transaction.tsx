@@ -9,11 +9,9 @@ import {
 
 export type TransactionProps = {
   amount: number;
-  currency: string;
   date: number;
   title: string;
   description: string;
-  id: string;
   tags: string[];
 };
 
@@ -52,13 +50,11 @@ const CONTENT_CONTAINER: ViewStyle = {
   height: "100%",
 };
 
-export const Transaction = ({
+export const TransactionCard = ({
   amount,
-  currency,
   date,
   title,
   description,
-  id,
   tags,
 }: TransactionProps) => {
   const tagsString = useMemo(() => (tags ? tags.join(", ") : ""), [tags]);

@@ -9,18 +9,27 @@ import {
   View,
 } from "react-native";
 
-import { Transaction, TransactionProps } from "./app/components/transaction/transaction";
+import { TransactionCard } from "./app/components/transaction/transaction";
 
 type TransactionResponse = {
-  transactions: TransactionProps[];
+  transactions: Transaction[];
   hasMore: boolean;
+};
+type Transaction = {
+  amount: number;
+  currency: string;
+  date: number;
+  title: string;
+  description: string;
+  id: string;
+  tags: string[];
 };
 
 const App: () => ReactNode = () => {
   const [
     transactions,
     setTransactions,
-  ] = useState<TransactionProps[] | null>(null);
+  ] = useState<Transaction[] | null>(null);
 
   const [
     hasMore,
@@ -92,14 +101,12 @@ const App: () => ReactNode = () => {
   };
 
   const handleTransactionRender:
-  ListRenderItem<TransactionProps> = ({ item }) => (
-    <Transaction
+  ListRenderItem<Transaction> = ({ item }) => (
+    <TransactionCard
       amount={item.amount}
-      currency={item.currency}
       date={item.date}
       title={item.title}
       description={item.description}
-      id={item.id}
       tags={item.tags}
     />
   );
