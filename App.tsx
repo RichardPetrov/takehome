@@ -62,7 +62,7 @@ const App: () => ReactNode = () => {
   const handleFetch = () => {
     fetchTransactions()
       .then((data) => {
-        if (data) {
+        if (data && data.transactions && data.hasMore) {
           setTransactions(data.transactions);
           setHasMore(data.hasMore);
         }
