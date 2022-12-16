@@ -24,7 +24,7 @@ const CONTAINER: ViewStyle = {
   borderWidth: 1,
   borderColor: "#000",
   paddingVertical: 10,
-  paddingHorizontal: 20,
+  paddingHorizontal: 16,
 };
 const BUTTON: ViewStyle = {
   height: 75,
@@ -32,12 +32,20 @@ const BUTTON: ViewStyle = {
   marginVertical: 16,
 };
 const TITLE: TextStyle = {
-  fontSize: 16,
+  fontSize: 14,
   fontWeight: "600",
 };
 const TEXT: TextStyle = {
   fontSize: 10,
+
+};
+const DETAILS: TextStyle = {
+  ...TEXT,
   textAlign: "right",
+};
+const DESCRIPTION: TextStyle = {
+  ...TEXT,
+  textAlign: "left",
 };
 const CONTENT_CONTAINER: ViewStyle = {
   flexDirection: "column",
@@ -63,15 +71,15 @@ export const Transaction = ({
         <View style={CONTENT_CONTAINER}>
           <Text style={TITLE}>{title}</Text>
 
-          <Text style={TEXT}>{description}</Text>
+          <Text style={DESCRIPTION}>{description}</Text>
         </View>
 
         <View style={CONTENT_CONTAINER}>
-          <Text style={TEXT}>{amountString}</Text>
+          <Text style={DETAILS}>{amountString}</Text>
 
-          <Text style={TEXT}>{dateString}</Text>
+          <Text style={DETAILS}>{dateString}</Text>
 
-          <Text style={TEXT}>{tagsString}</Text>
+          <Text style={DETAILS}>{tagsString}</Text>
         </View>
       </View>
     </TouchableOpacity>
