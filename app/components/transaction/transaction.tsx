@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import {
   ViewStyle,
   TouchableOpacity,
@@ -53,7 +53,10 @@ export const Transaction = ({
   id,
   tags,
 }: TransactionProps) => {
-  const tagsString = tags ? tags.join(", ") : "";
+  const tagsString = useMemo(() => (tags ? tags.join(", ") : ""), [tags]);
+  const amountString = useMemo(() => `$${(amount / 100).toFixed(2)}`, [amount]);
+  const dateString = new Date(date).toDateString();
+
   return (
     <TouchableOpacity style={BUTTON}>
       <View style={CONTAINER}>
@@ -64,9 +67,9 @@ export const Transaction = ({
         </View>
 
         <View style={CONTENT_CONTAINER}>
-          <Text style={TEXT}>{amount}</Text>
+          <Text style={TEXT}>{amountString}</Text>
 
-          <Text style={TEXT}>{date}</Text>
+          <Text style={TEXT}>{dateString}</Text>
 
           <Text style={TEXT}>{tagsString}</Text>
         </View>
