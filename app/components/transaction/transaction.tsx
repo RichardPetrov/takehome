@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import {
   ViewStyle,
   TouchableOpacity,
@@ -53,7 +53,8 @@ export const Transaction = ({
   id,
   tags,
 }: TransactionProps) => {
-  const tagsString = useMemo(() => tags.join(", "), [tags]);
+  console.log(tags);
+  const tagsString = tags ? tags.join(", ") : "";
   return (
     <TouchableOpacity style={BUTTON}>
       <View style={CONTAINER}>

@@ -37,7 +37,7 @@ const App: () => ReactNode = () => {
     if (startAfterTransactionId || limit) query += "?";
     if (startAfterTransactionId) query += `&startingAfter=${startAfterTransactionId}`;
     if (limit) query += `&limit= ${limit}`;
-
+    console.log(transactions);
     return fetch(
       query,
       {
@@ -77,14 +77,7 @@ const App: () => ReactNode = () => {
       fetchTransactions(lastTransactionId)
         .then((data) => {
           if (data) {
-            setTransactions(
-              (previousState) => {
-                if (previousState && data.transactions) {
-                  return [...previousState, data.transactions];
-                }
-                return previousState;
-              },
-            );
+            setTransactions(transactions.concat(data.transactions));
             setHasMore(data.hasMore);
           }
         })
