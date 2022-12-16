@@ -58,7 +58,8 @@ const App: () => ReactNode = () => {
         console.log(error);
       });
   };
-  useEffect(() => {
+
+  const handleFetch = () => {
     fetchTransactions()
       .then((data) => {
         if (data) {
@@ -69,6 +70,9 @@ const App: () => ReactNode = () => {
       .catch((error) => {
         console.log(error);
       });
+  };
+  useEffect(() => {
+    handleFetch();
   }, []);
 
   const handleOnEndReach = () => {
@@ -115,7 +119,7 @@ const App: () => ReactNode = () => {
 
         <FlatList
           refreshing={refreshing}
-          onRefresh={fetchTransactions}
+          onRefresh={handleFetch}
           style={{ height: "100%" }}
           ListHeaderComponent={getHeaderComponent}
           data={transactions}
