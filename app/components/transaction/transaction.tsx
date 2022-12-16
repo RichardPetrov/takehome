@@ -35,7 +35,6 @@ const TITLE: TextStyle = {
 };
 const TEXT: TextStyle = {
   fontSize: 10,
-
 };
 const DETAILS: TextStyle = {
   ...TEXT,
