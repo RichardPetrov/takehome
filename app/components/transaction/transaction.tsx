@@ -53,7 +53,6 @@ export const Transaction = ({
   id,
   tags,
 }: TransactionProps) => {
-  console.log(tags);
   const tagsString = tags ? tags.join(", ") : "";
   return (
     <TouchableOpacity style={BUTTON}>
