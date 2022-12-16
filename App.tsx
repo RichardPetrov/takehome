@@ -86,7 +86,7 @@ const App: () => ReactNode = () => {
         });
     }
   };
-  console.log(transactions);
+
   const handleTransactionRender:
   ListRenderItem<TransactionProps> = ({ item }) => (
     <Transaction
